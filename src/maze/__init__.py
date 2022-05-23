@@ -156,7 +156,7 @@ class Grid:
         return img
 
 
-def example_gen_png(fp):
+def example_gen_png(fp) -> None:
     from src.maze.aldous_broder import AldousBroder
 
     m = Mask.prepare_from_png("cat.png")

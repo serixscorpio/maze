@@ -1,8 +1,9 @@
 import tempfile
 from typing import Union
-from fastapi.responses import FileResponse, StreamingResponse
 
 from fastapi import FastAPI
+from fastapi.responses import FileResponse
+from fastapi.responses import StreamingResponse
 
 app = FastAPI()
 
