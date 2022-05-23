@@ -5,7 +5,7 @@ from src.maze.mask import Mask
 from maze.binary_tree import BinaryTree
 
 
-def test_neighbors():
+def test_neighbors() -> None:
     c_north = Cell(row=0, column=1)
     c_south = Cell(row=2, column=1)
     c_east = Cell(row=1, column=2)
@@ -16,7 +16,7 @@ def test_neighbors():
     assert c.neighbors() == [c_south, c_east, c_west]
 
 
-def test_link():
+def test_link() -> None:
     c1 = Cell(row=0, column=1)
     c2 = Cell(row=0, column=0)
     c1.link(c2)
@@ -29,7 +29,7 @@ def test_link():
     assert not c2.is_linked_to(c1)
 
 
-def test_grid_creation():
+def test_grid_creation() -> None:
     g = Grid.prepare_grid(2, 3)
     assert g.rows == 2
     assert g.columns == 3
@@ -37,7 +37,7 @@ def test_grid_creation():
     assert g.size() == 6
 
 
-def test_grid_access():
+def test_grid_access() -> None:
     g = Grid.prepare_grid(2, 3)
     assert g.get(2, 3) is None
     assert g.get(1, 2) is not None
@@ -50,17 +50,17 @@ def test_grid_access():
         assert type(cell) is Cell
 
 
-def test_grid_random_cell():
+def test_grid_random_cell() -> None:
     g = Grid.prepare_grid(2, 3)
     assert g.random_cell() is not None
 
 
-def test_grid_ascii_output():
+def test_grid_ascii_output() -> None:
     g = BinaryTree.on(Grid.prepare_grid(2, 3))
     print(g)
 
 
-def test_mask_initialization():
+def test_mask_initialization() -> None:
     m = Mask.prepare_simple()
     assert m.bits[0][0] == False
     assert m.bits[1][0] == False

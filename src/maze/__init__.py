@@ -1,5 +1,6 @@
 """Maze"""
 import tempfile
+from typing import BinaryIO
 from random import randrange
 from typing import Iterable
 from typing import Optional
@@ -20,7 +21,7 @@ class Cell:
     south: Optional["Cell"] = field(default=None)
     east: Optional["Cell"] = field(default=None)
     west: Optional["Cell"] = field(default=None)
-    links: dict[tuple[int], bool] = field(factory=dict)
+    links: dict[tuple[int, int], bool] = field(factory=dict)
 
     def link(self, cell: "Cell", bidirection: bool = True) -> None:
         self.links[(cell.row, cell.column)] = True
@@ -45,7 +46,7 @@ class Cell:
 class Grid:
     rows: int
     columns: int
-    grid: list[list[Cell]]
+    grid: list[list[Optional[Cell]]]
 
     def get(self, row: int, column: int) -> Optional["Cell"]:
         if row >= self.rows or row < 0:
@@ -54,7 +55,7 @@ class Grid:
             return None
         return self.grid[row][column]
 
-    def _configure_cells(self):
+    def _configure_cells(self) -> None:
         """initialize cells' neighbors"""
         for cell in self.each_cell():
             cell.north = self.get(cell.row - 1, cell.column)
@@ -63,7 +64,7 @@ class Grid:
             cell.east = self.get(cell.row, cell.column + 1)
 
     @classmethod
-    def prepare_grid(cls, rows, columns) -> "Grid":
+    def prepare_grid(cls, rows: int, columns: int) -> "Grid":
         mask = Mask(rows=rows, columns=columns)
         return cls.prepare_masked_grid(mask)
 
@@ -72,7 +73,7 @@ class Grid:
         """Prepare a masked grid
         For now, it seems upon the creation of a grid, the mask no longer need to be kept
         """
-        two_d_array_of_cells = [
+        two_d_array_of_cells: list[list[Optional[Cell]]] = [
             [
                 Cell(row_index, column_index) if bit else None
                 for column_index, bit in enumerate(row)
@@ -96,7 +97,7 @@ class Grid:
     def each_row(self) -> Iterable[Cell]:
         yield from self.grid
 
-    def each_cell(self) -> Cell:
+    def each_cell(self) -> Iterable[Cell]:
         for row in self.each_row():
             for cell in row:
                 if cell:
@@ -156,7 +157,7 @@ class Grid:
         return img
 
 
-def example_gen_png(fp) -> None:
+def example_gen_png(fp: BinaryIO) -> None:
     from src.maze.aldous_broder import AldousBroder
 
     m = Mask.prepare_from_png("cat.png")
