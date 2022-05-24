@@ -94,7 +94,7 @@ class Grid:
     def size(self) -> int:
         return len(list(self.each_cell()))
 
-    def each_row(self) -> Iterable[Cell]:
+    def each_row(self) -> Iterable[Iterable[Optional[Cell]]]:
         yield from self.grid
 
     def each_cell(self) -> Iterable[Cell]:
@@ -103,7 +103,7 @@ class Grid:
                 if cell:
                     yield cell
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         output = ["+", "---+" * self.columns, "\n"]
         for row in self.each_row():
             top = ["|"]

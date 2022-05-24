@@ -59,8 +59,9 @@ def test_grid_random_cell() -> None:
 
 
 def test_grid_ascii_output() -> None:
-    g = BinaryTree.on(Grid.prepare_grid(2, 3))
-    print(g)
+    g = BinaryTree.on(Grid.prepare_grid(1, 1))
+    output = "+---+\n|   |\n+---+\n"
+    assert g.__repr__() == output
 
 
 def test_mask_initialization() -> None:
