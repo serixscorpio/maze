@@ -1,7 +1,7 @@
 """Maze"""
 import tempfile
-from typing import BinaryIO
 from random import randrange
+from typing import BinaryIO
 from typing import Iterable
 from typing import Optional
 

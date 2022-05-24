@@ -40,12 +40,15 @@ def test_grid_creation() -> None:
 def test_grid_access() -> None:
     g = Grid.prepare_grid(2, 3)
     assert g.get(2, 3) is None
-    assert g.get(1, 2) is not None
-    assert g.get(1, 1).north == g.get(0, 1)
-    assert g.get(1, 1).south == g.get(2, 1)
-    assert g.get(1, 1).west == g.get(1, 0)
-    assert g.get(1, 1).east == g.get(1, 2)
-    assert g.get(1, 2).south is None
+    neighborly_cell = g.get(1, 1)
+    assert neighborly_cell is not None
+    assert neighborly_cell.north is g.get(0, 1)
+    assert neighborly_cell.south is g.get(2, 1)
+    assert neighborly_cell.west is g.get(1, 0)
+    assert neighborly_cell.east is g.get(1, 2)
+    south_east_corner = g.get(1, 2)
+    assert south_east_corner is not None
+    assert south_east_corner.south is None
     for cell in g.each_cell():
         assert type(cell) is Cell
 
