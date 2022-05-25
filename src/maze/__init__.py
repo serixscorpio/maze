@@ -1,5 +1,4 @@
 """Maze"""
-import tempfile
 from random import randrange
 from typing import BinaryIO
 from typing import Iterable
@@ -109,6 +108,8 @@ class Grid:
             top = ["|"]
             bottom = ["+"]
             for cell in row:
+                if not cell:
+                    cell = Cell(-1, -1)
                 top.append("   ")
                 if cell.is_linked_to(cell.east):
                     top.append(" ")
@@ -124,7 +125,7 @@ class Grid:
             output.extend(bottom)
         return "".join(output)
 
-    def render(self, cell_size: int = 20, wall_thickness: int = 1) -> Image:
+    def render(self, cell_size: int = 20, wall_thickness: int = 1) -> Image.Image:
         """render maze as an image
         For making physical mazes, try cell_size=40, wall_thickness=15
 
