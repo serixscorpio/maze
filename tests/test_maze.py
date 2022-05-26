@@ -1,3 +1,4 @@
+"""Test maze."""
 from src.maze import Cell
 from src.maze import Grid
 from src.maze.mask import Mask
@@ -6,6 +7,7 @@ from maze.binary_tree import BinaryTree
 
 
 def test_neighbors() -> None:
+    """Test a cell's presence/absence of neighbors."""
     c_north = Cell(row=0, column=1)
     c_south = Cell(row=2, column=1)
     c_east = Cell(row=1, column=2)
@@ -17,6 +19,7 @@ def test_neighbors() -> None:
 
 
 def test_link() -> None:
+    """Test a cell's link to other cells"""
     c1 = Cell(row=0, column=1)
     c2 = Cell(row=0, column=0)
     c1.link(c2)
@@ -30,6 +33,7 @@ def test_link() -> None:
 
 
 def test_grid_creation() -> None:
+    """Test creating a grid."""
     g = Grid.prepare_grid(2, 3)
     assert g.rows == 2
     assert g.columns == 3
@@ -38,6 +42,7 @@ def test_grid_creation() -> None:
 
 
 def test_grid_access() -> None:
+    """Test a cell's north/south/west/east in various scenarios."""
     g = Grid.prepare_grid(2, 3)
     assert g.get(2, 3) is None
     neighborly_cell = g.get(1, 1)
@@ -54,17 +59,20 @@ def test_grid_access() -> None:
 
 
 def test_grid_random_cell() -> None:
+    """Test retrieving a random cell from a grid."""
     g = Grid.prepare_grid(2, 3)
     assert g.random_cell() is not None
 
 
 def test_grid_ascii_output() -> None:
+    """Test ascii output from a grid."""
     g = BinaryTree.on(Grid.prepare_grid(1, 1))
     output = "+---+\n|   |\n+---+\n"
     assert g.__repr__() == output
 
 
 def test_mask_initialization() -> None:
+    """Test creating a mask."""
     m = Mask.prepare_simple()
     assert m.bits[0][0] == False
     assert m.bits[1][0] == False

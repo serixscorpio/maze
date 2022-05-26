@@ -1,7 +1,9 @@
 {
   "esbonio.sphinx.confDir": "",
   "python.formatting.provider": "black",
-  "python.testing.pytestArgs": ["tests"],
+  "python.testing.pytestArgs": [
+    "tests"
+  ],
   "python.testing.unittestEnabled": false,
   "python.testing.pytestEnabled": true,
   "python.linting.flake8Enabled": true,
