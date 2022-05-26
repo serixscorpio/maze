@@ -14,6 +14,8 @@ from maze.mask import Mask
 
 @define(eq=False)
 class Cell:
+    """Cell represents a single unit within a Grid"""
+
     row: int
     column: int
     north: Optional["Cell"] = field(default=None)
@@ -23,16 +25,27 @@ class Cell:
     links: dict[tuple[int, int], bool] = field(factory=dict)
 
     def link(self, cell: "Cell", bidirection: bool = True) -> None:
+        """Link this Cell to a target Cell
+        Args:
+            cell (Cell): target cell
+            bidirection (bool, optional): Whether or not target cell should link back. Defaults to True.
+        """
         self.links[(cell.row, cell.column)] = True
         if bidirection:
             cell.link(self, False)
 
     def unlink(self, cell: "Cell", bidirection: bool = True) -> None:
+        """Unlink this Cell from a target Cell
+        Args:
+            cell (Cell): target cell
+            bidirection (bool, optional): Whether or not target cell should also unlink from this cell. Defaults to True.
+        """
         self.links[(cell.row, cell.column)] = False
         if bidirection:
             cell.unlink(self, False)
 
     def is_linked_to(self, cell: Optional["Cell"]) -> bool:
+        """Return if this cell is linked to a target cell"""
         if cell is None:
             return False
         return self.links.get((cell.row, cell.column), False)
