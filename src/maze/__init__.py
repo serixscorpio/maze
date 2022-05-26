@@ -1,4 +1,4 @@
-"""Maze"""
+"""Maze."""
 from random import randrange
 from typing import BinaryIO
 from typing import Iterable
@@ -34,7 +34,7 @@ class Cell:
             cell.link(self, False)
 
     def unlink(self, cell: "Cell", bidirection: bool = True) -> None:
-        """Unlink this Cell from a target Cell
+        """Unlink this Cell from a target Cell.
 
         bidirection: whether or not target cell should unlink.
         """
@@ -43,22 +43,26 @@ class Cell:
             cell.unlink(self, False)
 
     def is_linked_to(self, cell: Optional["Cell"]) -> bool:
-        """Return if this cell is linked to a target cell"""
+        """Return if this cell is linked to a target cell."""
         if cell is None:
             return False
         return self.links.get((cell.row, cell.column), False)
 
     def neighbors(self) -> list["Cell"]:
+        """Return this cell's neighboring cells."""
         return list(filter(None, [self.north, self.south, self.east, self.west]))
 
 
 @define
 class Grid:
+    """Grid representing a maze."""
+
     rows: int
     columns: int
     grid: list[list[Optional[Cell]]]
 
     def get(self, row: int, column: int) -> Optional["Cell"]:
+        """Retrieve a Cell given a coordinate."""
         if row >= self.rows or row < 0:
             return None
         if column >= self.columns or column < 0:
@@ -66,7 +70,7 @@ class Grid:
         return self.grid[row][column]
 
     def _configure_cells(self) -> None:
-        """initialize cells' neighbors"""
+        """Initialize cells' neighbors."""
         for cell in self.each_cell():
             cell.north = self.get(cell.row - 1, cell.column)
             cell.south = self.get(cell.row + 1, cell.column)
@@ -75,14 +79,13 @@ class Grid:
 
     @classmethod
     def prepare_grid(cls, rows: int, columns: int) -> "Grid":
+        """Prepare a grid without masking any cells."""
         mask = Mask(rows=rows, columns=columns)
         return cls.prepare_masked_grid(mask)
 
     @classmethod
     def prepare_masked_grid(cls, mask: Mask) -> "Grid":
-        """Prepare a masked grid
-        For now, it seems upon the creation of a grid, the mask no longer need to be kept
-        """
+        """Prepare a masked grid."""
         two_d_array_of_cells: list[list[Optional[Cell]]] = [
             [
                 Cell(row_index, column_index) if bit else None
@@ -95,6 +98,7 @@ class Grid:
         return grid
 
     def random_cell(self) -> Cell:
+        """Return a random cell."""
         while True:
             row = randrange(self.rows)
             column = randrange(self.columns)
@@ -102,18 +106,22 @@ class Grid:
                 return cell
 
     def size(self) -> int:
+        """Return number of cells within this grid."""
         return len(list(self.each_cell()))
 
     def each_row(self) -> Iterable[Iterable[Optional[Cell]]]:
+        """Yield each row from this grid."""
         yield from self.grid
 
     def each_cell(self) -> Iterable[Cell]:
+        """Yield each cell from this grid."""
         for row in self.each_row():
             for cell in row:
                 if cell:
                     yield cell
 
     def __repr__(self) -> str:
+        """Return an ascii representation of this grid."""
         output = ["+", "---+" * self.columns, "\n"]
         for row in self.each_row():
             top = ["|"]
@@ -137,7 +145,8 @@ class Grid:
         return "".join(output)
 
     def render(self, cell_size: int = 20, wall_thickness: int = 1) -> Image.Image:
-        """render maze as an image
+        """render maze as an image.
+
         For making physical mazes, try cell_size=40, wall_thickness=15
 
         Args:
@@ -170,6 +179,7 @@ class Grid:
 
 
 def example_gen_png(fp: BinaryIO) -> None:
+    """Generate a maze in png format given a file io."""
     from src.maze.aldous_broder import AldousBroder
 
     m = Mask.prepare_from_png("cat.png")
