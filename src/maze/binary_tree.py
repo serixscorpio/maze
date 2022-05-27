@@ -1,7 +1,7 @@
 """Binary Tree Algorithm."""
 from random import randrange
 
-from src.maze import Grid
+from maze import Grid
 
 
 class BinaryTree:

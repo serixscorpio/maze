@@ -1,8 +1,9 @@
 """Test maze."""
+from maze import Cell
+from maze import Grid
+from maze.aldous_broder import AldousBroder
 from maze.binary_tree import BinaryTree
-from src.maze import Cell, Grid
-from src.maze.aldous_broder import AldousBroder
-from src.maze.mask import Mask
+from maze.mask import Mask
 
 
 def test_neighbors() -> None:

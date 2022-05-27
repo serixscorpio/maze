@@ -24,7 +24,7 @@ def read_item(item_id: int, q: Union[str, None] = None):
 
 @app.get("/pic")
 def read_pic():
-    from src.maze import example_gen_png
+    from maze import example_gen_png
 
     fp = tempfile.NamedTemporaryFile(suffix=".png")
     example_gen_png(fp)
