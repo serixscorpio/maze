@@ -1,3 +1,4 @@
+# flake8: noqa
 import tempfile
 from typing import Union
 
