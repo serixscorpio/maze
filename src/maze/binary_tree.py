@@ -1,11 +1,15 @@
+"""Binary Tree Algorithm."""
 from random import randrange
 
-from src.maze import Grid
+from maze import Grid
 
 
 class BinaryTree:
+    """Binary Tree Algorithm to generate a maze."""
+
     @classmethod
     def on(cls, grid: Grid) -> Grid:
+        """Run binary tree algorithm on a grid."""
         for cell in grid.each_cell():
             neighbors = list()
             if cell.north:
@@ -13,6 +17,6 @@ class BinaryTree:
             if cell.east:
                 neighbors.append(cell.east)
             if neighbors:
-                index = randrange(len(neighbors))
+                index = randrange(len(neighbors))  # noqa: S311
                 cell.link(neighbors[index])
         return grid

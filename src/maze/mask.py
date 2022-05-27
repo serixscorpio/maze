@@ -1,3 +1,4 @@
+"""Mask implementation."""
 from attrs import define
 from attrs import Factory
 from attrs import field
@@ -6,6 +7,8 @@ from PIL import Image
 
 @define
 class Mask:
+    """A Mask to define the shape of a maze's grid."""
+
     rows: int
     columns: int
     bits: list[list[bool]] = field(
@@ -19,7 +22,7 @@ class Mask:
 
     @classmethod
     def prepare_simple(cls) -> "Mask":
-        """Prepare a simple mask, primarily for testing purposes
+        """Prepare a simple mask, primarily for testing purposes.
 
         Returns:
             Mask: a simple 3x3 mask
@@ -32,6 +35,7 @@ class Mask:
 
     @classmethod
     def prepare_from_png(cls, path: str) -> "Mask":
+        """Make a mask from a png."""
         with Image.open(path) as image:
             mask = Mask(rows=image.height, columns=image.width)
             for x in range(image.width):
