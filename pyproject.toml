@@ -55,11 +55,11 @@ tests = ["tests", "*/tests"]
 
 [tool.coverage.run]
 branch = true
-source = ["maze", "tests"]
+source = ["maze"]
 
 [tool.coverage.report]
 show_missing = true
-fail_under = 100
+fail_under = 80
 
 [tool.mypy]
 strict = true

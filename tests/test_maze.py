@@ -1,9 +1,8 @@
 """Test maze."""
-from src.maze import Cell
-from src.maze import Grid
-from src.maze.mask import Mask
-
 from maze.binary_tree import BinaryTree
+from src.maze import Cell, Grid
+from src.maze.aldous_broder import AldousBroder
+from src.maze.mask import Mask
 
 
 def test_neighbors() -> None:
@@ -77,3 +76,10 @@ def test_mask_initialization() -> None:
     assert m.bits[0][0] is False
     assert m.bits[1][0] is False
     assert m.bits[0][1] is False
+
+
+def test_create_masked_grid() -> None:
+    """Test creating a masked grid."""
+    m = Mask.prepare_from_png("cat.png")
+    grid = AldousBroder.on(Grid.prepare_masked_grid(m))
+    grid.render()
