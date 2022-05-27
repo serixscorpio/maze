@@ -19,7 +19,7 @@ def test_neighbors() -> None:
 
 
 def test_link() -> None:
-    """Test a cell's link to other cells"""
+    """Test a cell's link to other cells."""
     c1 = Cell(row=0, column=1)
     c2 = Cell(row=0, column=0)
     c1.link(c2)
@@ -74,6 +74,6 @@ def test_grid_ascii_output() -> None:
 def test_mask_initialization() -> None:
     """Test creating a mask."""
     m = Mask.prepare_simple()
-    assert m.bits[0][0] == False
-    assert m.bits[1][0] == False
-    assert m.bits[0][1] == False
+    assert m.bits[0][0] is False
+    assert m.bits[1][0] is False
+    assert m.bits[0][1] is False

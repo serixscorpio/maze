@@ -100,8 +100,8 @@ class Grid:
     def random_cell(self) -> Cell:
         """Return a random cell."""
         while True:
-            row = randrange(self.rows)
-            column = randrange(self.columns)
+            row = randrange(self.rows)  # noqa: S311
+            column = randrange(self.columns)  # noqa: S311
             if cell := self.grid[row][column]:
                 return cell
 
@@ -145,13 +145,9 @@ class Grid:
         return "".join(output)
 
     def render(self, cell_size: int = 20, wall_thickness: int = 1) -> Image.Image:
-        """render maze as an image.
+        """Render maze as an image.
 
-        For making physical mazes, try cell_size=40, wall_thickness=15
-
-        Args:
-            cell_size (int, optional): _description_. Defaults to 20.
-            wall_thickness (int, optional): _description_. Defaults to 1.
+        For making physical mazes, try cell_size=40, wall_thickness=15.
         """
         img_width = cell_size * self.columns + 1
         img_height = cell_size * self.rows + 1
