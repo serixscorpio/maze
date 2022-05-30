@@ -1033,7 +1033,7 @@ test = ["pytest", "typing-extensions", "mypy"]
 
 [[package]]
 name = "types-pillow"
-version = "9.0.16"
+version = "9.0.19"
 description = "Typing stubs for Pillow"
 category = "main"
 optional = false
@@ -1097,7 +1097,7 @@ testing = ["coverage (>=4)", "coverage-enable-subprocess (>=1)", "flaky (>=3)", 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "471e108f8dd724f7a889afff4024543f365d09ad2c34516f82e166ce94788db9"
+content-hash = "8aec32239139d107ef727797460686c9c3c3eb09c9a9751ad00420dd203f6899"
 
 [metadata.files]
 alabaster = [
@@ -1740,8 +1740,8 @@ typeguard = [
     {file = "typeguard-2.13.3.tar.gz", hash = "sha256:00edaa8da3a133674796cf5ea87d9f4b4c367d77476e185e80251cc13dfbb8c4"},
 ]
 types-pillow = [
-    {file = "types-Pillow-9.0.16.tar.gz", hash = "sha256:83385b550ed003016bd685cf47201595dce2a90cec0c430d4bf742da9ca52c91"},
-    {file = "types_Pillow-9.0.16-py3-none-any.whl", hash = "sha256:792227090a49e17e360c32a5b9f732c996b7b60dbcd2d4ee60381b8ab1650d3f"},
+    {file = "types-Pillow-9.0.19.tar.gz", hash = "sha256:bad0de01fd2b6cfdcfcab580fc4025db2b5068e6237707d8f2f4493cd4c4fe16"},
+    {file = "types_Pillow-9.0.19-py3-none-any.whl", hash = "sha256:34f8380d9e5367baa075e3ef2961c65908f6b69b9161c2b08feb8937200aa25c"},
 ]
 typing-extensions = [
     {file = "typing_extensions-4.2.0-py3-none-any.whl", hash = "sha256:6657594ee297170d19f67d55c05852a874e7eb634f4f753dbd667855e07c1708"},
