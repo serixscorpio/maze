@@ -51,17 +51,17 @@ Requirements
 Installation
 ------------
 
-You can install *Maze* via pip_ from PyPI_:
-
 .. code:: console
-
-   $ pip install maze
+   $ poetry install
 
 
 Usage
 -----
 
-Please see the `Command-line Reference <Usage_>`_ for details.
+To run the maze api locally:
+
+.. code:: console
+   $ poetry run uvicorn main:app --reload
 
 
 Contributing
