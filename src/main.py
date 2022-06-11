@@ -1,6 +1,6 @@
 # flake8: noqa
 import tempfile
-from typing import Union
+from typing import Any, Union
 
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
@@ -10,7 +10,7 @@ app = FastAPI()
 
 
 @app.get("/")
-def read_root():
+def read_root() -> dict[str, str]:
     return {
         "Hello": "World",
         "Red Dot": "<img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=='/>",
@@ -18,12 +18,12 @@ def read_root():
 
 
 @app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
+def read_item(item_id: int, q: Union[str, None] = None) -> dict[str, Any]:
     return {"item_id": item_id, "q": q}
 
 
 @app.get("/pic")
-def read_pic():
+def read_pic() -> FileResponse:
     from maze import example_gen_png
 
     fp = tempfile.NamedTemporaryFile(suffix=".png")

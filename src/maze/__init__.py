@@ -2,7 +2,7 @@
 from __future__ import annotations
 
 from random import randrange
-from typing import BinaryIO
+from typing import IO
 from typing import Iterable
 
 from attrs import define
@@ -175,7 +175,7 @@ class Grid:
         return img
 
 
-def example_gen_png(fp: BinaryIO) -> None:
+def example_gen_png(fp: IO[bytes]) -> None:
     """Generate a maze in png format given a file io."""
     from maze.aldous_broder import AldousBroder
 
