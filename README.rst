@@ -3,7 +3,7 @@ Maze
 
 |PyPI| |Status| |Python Version| |License|
 
-|Read the Docs| |Tests| |Codecov|
+|Tests| |Codecov|
 
 |pre-commit| |Black|
 
@@ -19,9 +19,6 @@ Maze
 .. |License| image:: https://img.shields.io/pypi/l/maze
    :target: https://opensource.org/licenses/MIT
    :alt: License
-.. |Read the Docs| image:: https://img.shields.io/readthedocs/maze/latest.svg?label=Read%20the%20Docs
-   :target: https://maze.readthedocs.io/
-   :alt: Read the documentation at https://maze.readthedocs.io/
 .. |Tests| image:: https://github.com/serixscorpio/maze/workflows/Tests/badge.svg
    :target: https://github.com/serixscorpio/maze/actions?workflow=Tests
    :alt: Tests
@@ -104,4 +101,3 @@ This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter
 .. _pip: https://pip.pypa.io/
 .. github-only
 .. _Contributor Guide: CONTRIBUTING.rst
-.. _Usage: https://maze.readthedocs.io/en/latest/usage.html
