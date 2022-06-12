@@ -1,10 +1,10 @@
 # flake8: noqa
 import tempfile
-from typing import Any, Union
+from typing import Any
+from typing import Union
 
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
-from fastapi.responses import StreamingResponse
 
 app = FastAPI()
 
