@@ -49,6 +49,7 @@ Installation
 ------------
 
 .. code:: console
+
    $ poetry install
 
 
@@ -58,11 +59,13 @@ Usage
 To run the maze app locally:
 
 .. code:: console
+
    $ poetry run uvicorn main:app --app-dir src --reload
 
 To run the maze app using docker:
 
 .. code:: console
+
    $ docker build -t maze .
    $ docker run -dp 8000:8000 maze
 
