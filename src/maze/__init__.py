@@ -101,8 +101,8 @@ class Grid:
     def random_cell(self) -> Cell:
         """Return a random cell."""
         while True:
-            row = randrange(self.rows)  # noqa: S311
-            column = randrange(self.columns)  # noqa: S311
+            row = randrange(self.rows)  # nosec: B311
+            column = randrange(self.columns)  # nosec: B311
             if cell := self.grid[row][column]:
                 return cell
 
