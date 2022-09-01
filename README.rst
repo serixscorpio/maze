@@ -70,7 +70,7 @@ Then navigate to ``0.0.0.0:8000/pic`` to see a cat-shaped generated maze.
 Deploy to Production
 --------------------
 
-Use DigitalOcean's `App Platform`_.  It is optimized for ease of code deployment rather than deep customization of the underlying infrastructure.  It checks the source code from Github, and defaults to using a ``Dockerfile`` if one is present in the root of the directory.  See `How App Platform Builds Images`_.  The deployment configuration is primarily configured via the `maze-app UI console`_.  To fine-tune the deployment configuration, edit `App Specification`_ (in YAML) in the UI console -> ``Settings`` -> ``App Spec``.  
+Use DigitalOcean's `App Platform`_.  It is optimized for ease of code deployment rather than deep customization of the underlying infrastructure.  It checks the source code from Github, and defaults to using a ``Dockerfile`` if one is present in the root of the directory.  See `How App Platform Builds Images`_.  The deployment configuration is primarily configured via the `maze-app UI console`_.  To fine-tune the deployment configuration, edit `App Specification`_ (in YAML) in the UI console -> ``Settings`` -> ``App Spec``.
 
 Contributing
 ------------
