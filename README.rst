@@ -45,16 +45,12 @@ Requirements
 * TODO
 
 
-Installation
-------------
+Run Locally
+-----------
 
 .. code:: console
 
    $ poetry install
-
-
-Usage
------
 
 To run the maze app locally:
 
@@ -68,6 +64,13 @@ To run the maze app using docker:
 
    $ docker build -t maze .
    $ docker run -dp 8000:8000 maze
+
+Then navigate to ``0.0.0.0:8000/pic`` to see a cat-shaped generated maze.
+
+Deploy to Production
+--------------------
+
+Use DigitalOcean's `App Platform`_.  It is optimized for ease of code deployment rather than deep customization of the underlying infrastructure.  It checks the source code from Github, and defaults to using a ``Dockerfile`` if one is present in the root of the directory.  See `How App Platform Builds Images`_.  The deployment configuration is primarily configured via the `maze-app UI console`_.  To fine-tune the deployment configuration, edit `App Specification`_ (in YAML) in the UI console -> ``Settings`` -> ``App Spec``.
 
 Contributing
 ------------
@@ -96,7 +99,11 @@ Credits
 This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter`_ template.
 
 .. _@cjolowicz: https://github.com/cjolowicz
+.. _App Platform: https://docs.digitalocean.com/products/app-platform/details/features/#when-not-to-use-app-platform
+.. _App Specification: https://docs.digitalocean.com/products/app-platform/reference/app-spec/
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _How App Platform Builds Images: https://docs.digitalocean.com/products/app-platform/reference/dockerfile/
+.. _maze-app UI console: https://cloud.digitalocean.com/apps/14c72bfa-925e-4265-a26e-c8fbeee5499b/overview
 .. _MIT license: https://opensource.org/licenses/MIT
 .. _PyPI: https://pypi.org/
 .. _Hypermodern Python Cookiecutter: https://github.com/cjolowicz/cookiecutter-hypermodern-python
