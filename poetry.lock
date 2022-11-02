@@ -222,7 +222,7 @@ testing = ["covdefaults (>=2.2)", "coverage (>=6.4.2)", "pytest (>=7.1.2)", "pyt
 name = "flake8"
 version = "5.0.4"
 description = "the modular source code checker: pep8 pyflakes and co"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6.1"
 
@@ -235,7 +235,7 @@ pyflakes = ">=2.5.0,<2.6.0"
 name = "flake8-bugbear"
 version = "22.10.27"
 description = "A plugin for flake8 finding likely bugs and design problems in your program. Contains warnings that don't belong in pyflakes and pycodestyle."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -332,7 +332,7 @@ python-versions = "*"
 name = "mccabe"
 version = "0.7.0"
 description = "McCabe checker, plugin for flake8"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -476,7 +476,7 @@ tomli = {version = ">=1.1.0", markers = "python_version < \"3.11\""}
 name = "pycodestyle"
 version = "2.9.1"
 description = "Python style guide checker"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -513,7 +513,7 @@ toml = ["toml"]
 name = "pyflakes"
 version = "2.5.0"
 description = "passive checker of Python programs"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -561,14 +561,14 @@ testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.
 
 [[package]]
 name = "pyupgrade"
-version = "2.38.4"
+version = "3.2.0"
 description = "A tool to automatically upgrade syntax for newer versions."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
 [package.dependencies]
-tokenize-rt = "<5"
+tokenize-rt = ">=3.2.0"
 
 [[package]]
 name = "pyyaml"
@@ -713,7 +713,7 @@ pbr = ">=2.0.0,<2.1.0 || >2.1.0"
 name = "tokenize-rt"
 version = "4.2.1"
 description = "A wrapper around the stdlib `tokenize` which roundtrips."
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6.1"
 
@@ -809,7 +809,7 @@ testing = ["coverage (>=6.2)", "coverage-enable-subprocess (>=1)", "flaky (>=3.7
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "79ebf653e3e415494801e20ccd58cce734533d59bab88573c3446706d5063eff"
+content-hash = "fb035c78fd6fb2b37c244c80dc18af05ad43505725ed7c163b7abd1ac56a0080"
 
 [metadata.files]
 anyio = []
