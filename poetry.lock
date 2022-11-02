@@ -401,7 +401,7 @@ python-versions = ">=2.6"
 name = "pep8-naming"
 version = "0.13.2"
 description = "Check PEP-8 naming conventions, plugin for flake8"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7"
 
@@ -809,7 +809,7 @@ testing = ["coverage (>=6.2)", "coverage-enable-subprocess (>=1)", "flaky (>=3.7
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "f93a00ff89c1482f5cee41606f4f75a13758c44b8dc446c544f7ed49da080ca6"
+content-hash = "2fcbd5eadf963b6e27839fde62bb5583387edb4fbe9faa9103092dfcd4e079c0"
 
 [metadata.files]
 anyio = []
