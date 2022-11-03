@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "maze"
-version = "0.0.0"
-description = "Maze"
+version = "0.0.1"
+description = "A library for generating a maze."
 authors = ["Eric Chiang <serixscorpio@gmail.com>"]
 license = "MIT"
 readme = "README.rst"
