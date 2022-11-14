@@ -29,7 +29,7 @@ pep8-naming = "^0.13.2"
 pytest = "^7.1.2"
 coverage = { version = "^6.4.1", extras = ["toml"] }
 safety = "^2.3.1"
-mypy = "^0.971"
+mypy = "^0.990"
 typeguard = "^2.13.2"
 pre-commit = "^2.20.0"
 flake8 = "^5.0.4"
