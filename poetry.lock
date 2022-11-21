@@ -564,7 +564,7 @@ testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.
 
 [[package]]
 name = "pyupgrade"
-version = "3.2.0"
+version = "3.2.2"
 description = "A tool to automatically upgrade syntax for newer versions."
 category = "main"
 optional = false
@@ -825,8 +825,8 @@ testing = ["coverage (>=6.2)", "coverage-enable-subprocess (>=1)", "flaky (>=3.7
 
 [metadata]
 lock-version = "1.1"
-python-versions = '^3.10'
-content-hash = "e3a2c22aaebe4c24004e07492f21276a88e27c915b0d162822389599d591e760"
+python-versions = "^3.10"
+content-hash = "4144bb4a63913cb92496e9b2e09f88a6dae518086543113564c2c7314b0d982a"
 
 [metadata.files]
 anyio = [
@@ -1203,8 +1203,8 @@ pytest = [
     {file = "pytest-7.2.0.tar.gz", hash = "sha256:c4014eb40e10f11f355ad4e3c2fb2c6c6d1919c73f3b5a433de4708202cade59"},
 ]
 pyupgrade = [
-    {file = "pyupgrade-3.2.0-py2.py3-none-any.whl", hash = "sha256:2aa6c40e49ea5a350e6e45b8c7847b1741aef274a35d4f0b2bf91731ec8ab796"},
-    {file = "pyupgrade-3.2.0.tar.gz", hash = "sha256:70e1ac1e6b34a90fb21f5cada1907ef035b12dfc1d9f13cefd367acf3b530310"},
+    {file = "pyupgrade-3.2.2-py2.py3-none-any.whl", hash = "sha256:16c0e3a6ac2d83cd0fd30c138af5504918c59d584344f60a15d5f8009b11a0ed"},
+    {file = "pyupgrade-3.2.2.tar.gz", hash = "sha256:6bfa246fb9d94e490fad37980bcfc05b9494183ff29d9100ef4f7f22a952ce67"},
 ]
 pyyaml = [
     {file = "PyYAML-6.0-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:d4db7c7aef085872ef65a8fd7d6d09a14ae91f691dec3e87ee5ee0539d516f53"},
