@@ -41,7 +41,7 @@ attrs = "^22.1.0"
 click = "^8.1.0"
 pillow = '^9.2.0'
 python = '^3.10'
-types-pillow = '^9.2.1'
+types-pillow = '^9.3.0'
 
 [tool.poetry.group.dev.dependencies]
 bandit = "^1.7.4"
