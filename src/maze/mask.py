@@ -1,7 +1,5 @@
 """Mask implementation."""
-from attrs import define
-from attrs import Factory
-from attrs import field
+from attrs import Factory, define, field
 from PIL import Image
 
 

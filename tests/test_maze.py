@@ -1,6 +1,5 @@
 """Test maze."""
-from maze import Cell
-from maze import Grid
+from maze import Cell, Grid
 from maze.aldous_broder import AldousBroder
 from maze.binary_tree import BinaryTree
 from maze.mask import Mask
