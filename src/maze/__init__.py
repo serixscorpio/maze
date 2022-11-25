@@ -2,13 +2,10 @@
 from __future__ import annotations
 
 from random import randrange
-from typing import IO
-from typing import Iterable
+from typing import IO, Iterable
 
-from attrs import define
-from attrs import field
-from PIL import Image
-from PIL import ImageDraw
+from attrs import define, field
+from PIL import Image, ImageDraw
 
 from maze.mask import Mask
 

@@ -1,8 +1,7 @@
 """Aldous Broder Algorithm to generate maze."""
 from random import choice
 
-from maze import Cell
-from maze import Grid
+from maze import Cell, Grid
 
 
 class AldousBroder:
