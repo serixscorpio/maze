@@ -52,20 +52,7 @@ Run Locally
 
    $ poetry install
 
-To run the maze app locally:
-
-.. code:: console
-
-   $ poetry run uvicorn main:app --app-dir src --reload
-
-To run the maze app using docker:
-
-.. code:: console
-
-   $ docker build -t maze .
-   $ docker run -dp 8000:8000 maze
-
-Then navigate to ``0.0.0.0:8000/pic`` to see a cat-shaped generated maze.
+TODO: document run the maze console app.
 
 Deploy to Production
 --------------------
