@@ -51,13 +51,10 @@ Run Locally
 .. code:: console
 
    $ poetry install
+   $ poetry run maze
 
-TODO: document run the maze console app.
+This generates a cat shaped maze in the project's root directory named `cat_maze.png`.
 
-Deploy to Production
---------------------
-
-Use DigitalOcean's `App Platform`_.  It is optimized for ease of code deployment rather than deep customization of the underlying infrastructure.  It checks the source code from Github, and defaults to using a ``Dockerfile`` if one is present in the root of the directory.  See `How App Platform Builds Images`_.  The deployment configuration is primarily configured via the `maze-app UI console`_.  To fine-tune the deployment configuration, edit `App Specification`_ (in YAML) in the UI console -> ``Settings`` -> ``App Spec``.
 
 Contributing
 ------------
@@ -86,15 +83,9 @@ Credits
 This project was generated from `@cjolowicz`_'s `Hypermodern Python Cookiecutter`_ template.
 
 .. _@cjolowicz: https://github.com/cjolowicz
-.. _App Platform: https://docs.digitalocean.com/products/app-platform/details/features/#when-not-to-use-app-platform
-.. _App Specification: https://docs.digitalocean.com/products/app-platform/reference/app-spec/
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _How App Platform Builds Images: https://docs.digitalocean.com/products/app-platform/reference/dockerfile/
-.. _maze-app UI console: https://cloud.digitalocean.com/apps/14c72bfa-925e-4265-a26e-c8fbeee5499b/overview
 .. _MIT license: https://opensource.org/licenses/MIT
 .. _PyPI: https://pypi.org/
 .. _Hypermodern Python Cookiecutter: https://github.com/cjolowicz/cookiecutter-hypermodern-python
 .. _file an issue: https://github.com/serixscorpio/maze/issues
-.. _pip: https://pip.pypa.io/
 .. github-only
 .. _Contributor Guide: CONTRIBUTING.rst
