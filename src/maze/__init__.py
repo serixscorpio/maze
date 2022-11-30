@@ -176,6 +176,6 @@ def example_gen_png(fp: IO[bytes]) -> None:
     """Generate a maze in png format given a file io."""
     from maze.aldous_broder import AldousBroder
 
-    m = Mask.prepare_from_png("cat.png")
+    m = Mask.prepare_from_png("src/maze/cat.png")
     grid = AldousBroder.on(Grid.prepare_masked_grid(m))
     grid.render().save(fp, format="PNG")
