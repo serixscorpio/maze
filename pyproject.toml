@@ -34,7 +34,7 @@ license = 'MIT'
 name = 'ec-maze'
 readme = 'README.rst'
 repository = 'https://github.com/serixscorpio/maze'
-version = '0.0.1'
+version = '0.0.2'
 packages = [{ include = "maze", from = "src" }]
 [tool.poetry.dependencies]
 attrs = "^22.1.0"
