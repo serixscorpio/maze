@@ -37,33 +37,33 @@ repository = 'https://github.com/serixscorpio/maze'
 version = '0.0.2'
 packages = [{ include = "maze", from = "src" }]
 [tool.poetry.dependencies]
-attrs = "^22.1.0"
-click = "^8.1.0"
-pillow = '^9.2.0'
-python = '^3.10'
-types-pillow = '^9.2.1'
+attrs = ">=22.1.0"
+click = ">=8.1.0"
+pillow = '>=9.2.0'
+python = '^3.10'         # keep this upper bounded to be compatible with libraries like isort.
+types-pillow = '>=9.2.1'
 
 [tool.poetry.group.dev.dependencies]
-bandit = "^1.7.4"
-black = "^22.10.0"
-darglint = "^1.8.1"
-flake8 = "^6.0.0"
-flake8-bugbear = "^22.10.27"
-flake8-docstrings = "^1.6.0"
-flake8-rst-docstrings = "^0.3.0"
-isort = "^5.10.1"
-mypy = "^0.991"
-pep8-naming = "^0.13.2"
-pre-commit = "^2.20.0"
-pre-commit-hooks = "^4.4.0"
-pygments = "^2.13.0"
-pytest = "^7.2.0"
-pyupgrade = "^3.2.2"
-safety = "^2.3.2"
-typeguard = "^2.13.3"
+bandit = ">=1.7.4"
+black = ">=22.10.0"
+darglint = ">=1.8.1"
+flake8 = ">=6.0.0"
+flake8-bugbear = ">=22.10.27"
+flake8-docstrings = ">=1.6.0"
+flake8-rst-docstrings = ">=0.3.0"
+isort = ">=5.10.1"
+mypy = ">=0.991"
+pep8-naming = ">=0.13.2"
+pre-commit = ">=2.20.0"
+pre-commit-hooks = ">=4.4.0"
+pygments = ">=2.13.0"
+pytest = ">=7.2.0"
+pyupgrade = ">=3.2.2"
+safety = ">=2.3.2"
+typeguard = ">=2.13.3"
 [tool.poetry.dev-dependencies.coverage]
 extras = ['toml']
-version = '^6.4.1'
+version = '>=6.4.1'
 
 
 [tool.poetry.scripts]
