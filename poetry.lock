@@ -1153,14 +1153,14 @@ test = ["mypy", "pytest", "typing-extensions"]
 
 [[package]]
 name = "types-pillow"
-version = "9.3.0.4"
+version = "9.4.0.16"
 description = "Typing stubs for Pillow"
 category = "main"
 optional = false
 python-versions = "*"
 files = [
-    {file = "types-Pillow-9.3.0.4.tar.gz", hash = "sha256:c18d466dc18550d96b8b4a279ff94f0cbad696825b5ad55466604f1daf5709de"},
-    {file = "types_Pillow-9.3.0.4-py3-none-any.whl", hash = "sha256:98b8484ff343676f6f7051682a6cfd26896e993e86b3ce9badfa0ec8750f5405"},
+    {file = "types-Pillow-9.4.0.16.tar.gz", hash = "sha256:3d72ffd2edd5ccd2ef6b6566ed3e57e6e7bd8051d092064e1c68ee0acff44a45"},
+    {file = "types_Pillow-9.4.0.16-py3-none-any.whl", hash = "sha256:9bcdf7ddf2b84b19ee89e8ade90fd214e6dfa67abb31cd2b07ac33a2fe4133ac"},
 ]
 
 [[package]]
