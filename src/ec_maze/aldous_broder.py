@@ -14,7 +14,7 @@ class AldousBroder:
         unvisited = grid.size() - 1
 
         while unvisited > 0:
-            neighbor = choice(cell.neighbors())  # nosec: B311
+            neighbor = choice(cell.neighbors())  # noqa: S311
             if len(neighbor.links) == 0:
                 cell.link(neighbor)
                 unvisited -= 1

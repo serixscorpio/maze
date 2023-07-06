@@ -1,7 +1,7 @@
 """Test maze."""
-from ec_maze.grid import Cell, Grid
 from ec_maze.aldous_broder import AldousBroder
 from ec_maze.binary_tree import BinaryTree
+from ec_maze.grid import Cell, Grid
 from ec_maze.mask import Mask
 
 

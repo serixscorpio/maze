@@ -1,12 +1,11 @@
 """Command-line interface."""
 from typing import IO
+
 import click
 
-from ec_maze.mask import Mask
 from ec_maze.aldous_broder import AldousBroder
-
-
 from ec_maze.grid import Grid
+from ec_maze.mask import Mask
 
 
 def example_gen_png(fp: IO[bytes]) -> None:

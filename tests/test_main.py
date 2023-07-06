@@ -1,7 +1,6 @@
 """Test cases for the maze module."""
 import pytest
 from click.testing import CliRunner
-
 from ec_maze import maze
 
 
