@@ -1,8 +1,8 @@
 """Test maze."""
-from maze import Cell, Grid
-from maze.aldous_broder import AldousBroder
-from maze.binary_tree import BinaryTree
-from maze.mask import Mask
+from ec_maze.grid import Cell, Grid
+from ec_maze.aldous_broder import AldousBroder
+from ec_maze.binary_tree import BinaryTree
+from ec_maze.mask import Mask
 
 
 def test_neighbors() -> None:

@@ -2,7 +2,7 @@
 import pytest
 from click.testing import CliRunner
 
-from maze import maze
+from ec_maze import maze
 
 
 @pytest.fixture
