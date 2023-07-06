@@ -2,12 +2,17 @@
 from __future__ import annotations
 
 from random import randrange
-from typing import IO, Iterable
+from typing import Iterable
 
 from attrs import define, field
 from PIL import Image, ImageDraw
 
-from maze.mask import Mask
+from ec_maze.mask import Mask
+
+
+__version__ = "0.0.4"
+
+from ec_maze.maze import main  # noqa: F401
 
 
 @define(eq=False)
@@ -172,10 +177,3 @@ class Grid:
         return img
 
 
-def example_gen_png(fp: IO[bytes]) -> None:
-    """Generate a maze in png format given a file io."""
-    from maze.aldous_broder import AldousBroder
-
-    m = Mask.prepare_from_png("src/maze/cat.png")
-    grid = AldousBroder.on(Grid.prepare_masked_grid(m))
-    grid.render().save(fp, format="PNG")
