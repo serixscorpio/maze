@@ -80,6 +80,6 @@ def test_mask_initialization() -> None:
 
 def test_create_masked_grid() -> None:
     """Test creating a masked grid."""
-    m = Mask.prepare_from_png("src/maze/cat.png")
+    m = Mask.prepare_from_png("src/ec_maze/cat.png")
     grid = AldousBroder.on(Grid.prepare_masked_grid(m))
     grid.render()

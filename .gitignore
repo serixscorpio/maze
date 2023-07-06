@@ -12,3 +12,6 @@ cat_maze.png
 
 # Environments
 venv/
+
+# ASDF version manager
+.tool-versions

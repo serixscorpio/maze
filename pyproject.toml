@@ -29,7 +29,7 @@ warn_unreachable = true
 authors = [{name = 'Eric Ti Yu Chiang', email = 'eric.ti.yu.chiang@gmail.com'}]
 classifiers = [
     'Development Status :: 3 - Alpha',
-    'Programming Language :: Python :: 3.10'
+    'Programming Language :: Python :: 3.11'
 ]
 dependencies = [
     "attrs>=22.1.0",
@@ -42,7 +42,7 @@ dynamic = ["version"]
 license = 'MIT'
 name = 'ec-maze'
 readme = 'README.rst'
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 
 [project.optional-dependencies]
 dev = [

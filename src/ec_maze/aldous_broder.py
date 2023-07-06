@@ -1,7 +1,7 @@
 """Aldous Broder Algorithm to generate maze."""
 from random import choice
 
-from maze import Cell, Grid
+from ec_maze.grid import Cell, Grid
 
 
 class AldousBroder:

@@ -2,15 +2,17 @@
 from typing import IO
 import click
 
-from ec_maze import Grid
 from ec_maze.mask import Mask
 from ec_maze.aldous_broder import AldousBroder
+
+
+from ec_maze.grid import Grid
 
 
 def example_gen_png(fp: IO[bytes]) -> None:
     """Generate a maze in png format given a file io."""
 
-    m = Mask.prepare_from_png("src/maze/cat.png")
+    m = Mask.prepare_from_png("src/ec_maze/cat.png")
     grid = AldousBroder.on(Grid.prepare_masked_grid(m))
     grid.render().save(fp, format="PNG")
 

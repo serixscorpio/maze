@@ -1,7 +1,7 @@
 """Binary Tree Algorithm."""
 from random import randrange
 
-from maze import Grid
+from ec_maze.grid import Grid
 
 
 class BinaryTree:
