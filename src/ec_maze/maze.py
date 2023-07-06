@@ -22,6 +22,9 @@ def main() -> None:
     """Generate an example maze."""
     with open("cat_maze.png", mode="wb") as f:
         example_gen_png(f)
+    print(
+        "A cat shaped maze named `cat_maze.png` is generated at the project root directory."
+    )
 
 
 if __name__ == "__main__":
