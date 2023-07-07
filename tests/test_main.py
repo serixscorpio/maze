@@ -1,8 +1,7 @@
-"""Test cases for the __main__ module."""
+"""Test cases for the maze module."""
 import pytest
 from click.testing import CliRunner
-
-from maze import __main__
+from ec_maze import maze
 
 
 @pytest.fixture
@@ -13,5 +12,5 @@ def runner() -> CliRunner:
 
 def test_main_succeeds(runner: CliRunner) -> None:
     """It exits with a status code of zero."""
-    result = runner.invoke(__main__.main)
+    result = runner.invoke(maze.main)
     assert result.exit_code == 0

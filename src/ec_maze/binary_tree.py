@@ -1,7 +1,7 @@
 """Binary Tree Algorithm."""
 from random import randrange
 
-from maze import Grid
+from ec_maze.grid import Grid
 
 
 class BinaryTree:
@@ -17,6 +17,6 @@ class BinaryTree:
             if cell.east:
                 neighbors.append(cell.east)
             if neighbors:
-                index = randrange(len(neighbors))  # nosec: B311
+                index = randrange(len(neighbors))  # noqa: S311
                 cell.link(neighbors[index])
         return grid

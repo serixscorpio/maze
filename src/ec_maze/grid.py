@@ -1,13 +1,10 @@
-"""Maze."""
-from __future__ import annotations
-
 from random import randrange
-from typing import IO, Iterable
+from typing import Iterable, Self
 
 from attrs import define, field
 from PIL import Image, ImageDraw
 
-from maze.mask import Mask
+from ec_maze.mask import Mask
 
 
 @define(eq=False)
@@ -16,37 +13,35 @@ class Cell:
 
     row: int
     column: int
-    north: Cell | None = field(default=None)
-    south: Cell | None = field(default=None)
-    east: Cell | None = field(default=None)
-    west: Cell | None = field(default=None)
+    north: Self | None = field(default=None)
+    south: Self | None = field(default=None)
+    east: Self | None = field(default=None)
+    west: Self | None = field(default=None)
     links: dict[tuple[int, int], bool] = field(factory=dict)
 
-    def link(self, cell: Cell, bidirection: bool = True) -> None:
+    def link(self, cell: Self, bidirection: bool = True) -> None:
         """Link this Cell to a target Cell.
-
         bidirection: whether or not target cell should link back.
         """
         self.links[(cell.row, cell.column)] = True
         if bidirection:
             cell.link(self, False)
 
-    def unlink(self, cell: Cell, bidirection: bool = True) -> None:
+    def unlink(self, cell: Self, bidirection: bool = True) -> None:
         """Unlink this Cell from a target Cell.
-
         bidirection: whether or not target cell should unlink.
         """
         self.links[(cell.row, cell.column)] = False
         if bidirection:
             cell.unlink(self, False)
 
-    def is_linked_to(self, cell: Cell | None) -> bool:
+    def is_linked_to(self, cell: Self | None) -> bool:
         """Return if this cell is linked to a target cell."""
         if cell is None:
             return False
         return self.links.get((cell.row, cell.column), False)
 
-    def neighbors(self) -> list[Cell]:
+    def neighbors(self) -> list[Self]:
         """Return this cell's neighboring cells."""
         return list(filter(None, [self.north, self.south, self.east, self.west]))
 
@@ -76,13 +71,13 @@ class Grid:
             cell.east = self.get(cell.row, cell.column + 1)
 
     @classmethod
-    def prepare_grid(cls, rows: int, columns: int) -> Grid:
+    def prepare_grid(cls, rows: int, columns: int) -> Self:
         """Prepare a grid without masking any cells."""
         mask = Mask(rows=rows, columns=columns)
         return cls.prepare_masked_grid(mask)
 
     @classmethod
-    def prepare_masked_grid(cls, mask: Mask) -> Grid:
+    def prepare_masked_grid(cls, mask: Mask) -> Self:
         """Prepare a masked grid."""
         two_d_array_of_cells: list[list[Cell | None]] = [
             [
@@ -98,8 +93,8 @@ class Grid:
     def random_cell(self) -> Cell:
         """Return a random cell."""
         while True:
-            row = randrange(self.rows)  # nosec: B311
-            column = randrange(self.columns)  # nosec: B311
+            row = randrange(self.rows)  # noqa: S311
+            column = randrange(self.columns)  # noqa: S311
             if cell := self.grid[row][column]:
                 return cell
 
@@ -144,7 +139,6 @@ class Grid:
 
     def render(self, cell_size: int = 20, wall_thickness: int = 1) -> Image.Image:
         """Render maze as an image.
-
         For making physical mazes, try cell_size=40, wall_thickness=15.
         """
         img_width = cell_size * self.columns + 1
@@ -170,12 +164,3 @@ class Grid:
 
         # img.show() # for debugging purposes
         return img
-
-
-def example_gen_png(fp: IO[bytes]) -> None:
-    """Generate a maze in png format given a file io."""
-    from maze.aldous_broder import AldousBroder
-
-    m = Mask.prepare_from_png("src/maze/cat.png")
-    grid = AldousBroder.on(Grid.prepare_masked_grid(m))
-    grid.render().save(fp, format="PNG")
