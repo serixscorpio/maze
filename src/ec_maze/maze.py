@@ -25,7 +25,3 @@ def main() -> None:
     print(
         "A cat shaped maze named `cat_maze.png` is generated at the project root directory."
     )
-
-
-if __name__ == "__main__":
-    main(prog_name="maze")  # pragma: no cover
