@@ -1,3 +1,12 @@
+<p align="center">
+<a href="https://github.com/serixscorpio/maze/actions?query=workflow%3ATest+event%3Apush+branch%3Amain" target="_blank">
+    <img src="https://github.com/serixscorpio/maze/actions/workflows/test.yml/badge.svg" alt="Test">
+</a>
+<a href="https://smokeshow.helpmanual.io/1q2i3t2l6104642v1x38/" target="_blank">
+    coverage report
+</a>
+</p>
+
 # Development
 
 Clone this repository.
